@@ -15,6 +15,7 @@ export const apiCall = url => {
 export const getWeatherForCity = city => {
   let out;
   return apiCall(`${WEATHER_API_BASE_URL}/current.json?q=${city.trim()}&key=${process.env.REACT_APP_WEATHER_API_KEY}`).then(data => {
+    console.log('data: ', data);
     out = {
       city: data.location.name,
       country: data.location.country,
@@ -22,6 +23,9 @@ export const getWeatherForCity = city => {
       temp_feels_like: data.current.feelslike_c,
       humidity: data.current.humidity,
       last_updated: data.current.last_updated,
+      condition: data.current.condition,
+      wind_kph: data.current.wind_kph,
+      wind_dir: data.current.wind_dir,
     }
     return out;
   });

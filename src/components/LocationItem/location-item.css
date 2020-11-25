@@ -1,12 +1,22 @@
-.location-item {
+.location-item__wrapper {
   position: relative;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   width: 750px;
   background: #F3F3F3;
   margin: 16px 0;
   padding: 8px;
   border-radius: 4px;
+}
+.location-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.location-item__extra-info__wrapper {
+  display: flex;
+  align-items: center;
 }
 .location-item__city {
   flex-basis: 60%;
@@ -32,4 +42,15 @@
 .location-item__remove:hover {
   font-weight: bold;
   color: red;
+}
+.extra-info-box__wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.extra-info-box__wrapper + .extra-info-box__wrapper {
+  margin-left: 24px;
+}
+.extra-info-box__title {
+  font-size: 14px;
+  color: rgba(72, 71, 87, 0.55);
 }
