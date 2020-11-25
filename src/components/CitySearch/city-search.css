@@ -1,0 +1,13 @@
+.city-search__wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.city-search__form {
+  display: flex;
+  flex-direction: column;
+}
+.city-search__error {
+  margin-top: 8px;
+  font-size: 13px;
+  color: red;
+}

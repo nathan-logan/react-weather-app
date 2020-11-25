@@ -1,0 +1,14 @@
+* {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.app_container {
+  margin: 50px auto;
+  width: 90%;
+}
+
+@media screen and (min-width: 1024px) {
+  .app_container {
+    width: 50%;
+  }
+}
