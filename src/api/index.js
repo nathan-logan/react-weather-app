@@ -13,10 +13,8 @@ export const apiCall = url => {
 }
 
 export const getWeatherForCity = city => {
-  let out;
   return apiCall(`${WEATHER_API_BASE_URL}/current.json?q=${city.trim()}&key=${process.env.REACT_APP_WEATHER_API_KEY}`).then(data => {
-    console.log('data: ', data);
-    out = {
+    return {
       city: data.location.name,
       country: data.location.country,
       temp: data.current.temp_c,
@@ -27,18 +25,16 @@ export const getWeatherForCity = city => {
       wind_kph: data.current.wind_kph,
       wind_dir: data.current.wind_dir,
     }
-    return out;
   });
 }
 
 export const getLocationFromCoords = (lat, lon) => {
-  let out;
+
   return apiCall(`${LOCATION_API_BASE_URL}/reverse.php?key=${process.env.REACT_APP_LOCATION_ACCESS_TOKEN}&lat=${lat}&lon=${lon}&format=json`).then(data => {
-    out = {
+    return {
       city: data.address.city,
       country: data.address.country,
       state: data.address.state,
     }
-    return out;
-  })
+  });
 }
