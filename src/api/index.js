@@ -29,7 +29,6 @@ export const getWeatherForCity = city => {
 }
 
 export const getLocationFromCoords = (lat, lon) => {
-
   return apiCall(`${LOCATION_API_BASE_URL}/reverse.php?key=${process.env.REACT_APP_LOCATION_ACCESS_TOKEN}&lat=${lat}&lon=${lon}&format=json`).then(data => {
     return {
       city: data.address.city,

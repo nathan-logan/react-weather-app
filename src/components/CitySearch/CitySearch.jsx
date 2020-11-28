@@ -45,7 +45,7 @@ const CitySearch = (props) => {
             value={values.city_query}
             onChange={handleChange}
           />
-          <button type="submit">Search</button>
+          <button type="submit">+ Add city</button>
         </div>
         {props.error && <span className="city-search__error">{props.error.message}</span>}
       </form>
